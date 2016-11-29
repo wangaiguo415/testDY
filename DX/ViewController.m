@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "firstViewController.h"
 
-@interface ViewController ()
+@interface ViewController (){
+    firstViewController *first;
+}
 
 @end
 
@@ -16,7 +19,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = [UIColor greenColor];
+//    self.title = @"嘻嘻嘻😝";
+    self.navigationItem.title = @"嘻嘻嘻😝";
+    first = [[firstViewController alloc]init];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,4 +32,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    [self.navigationController pushViewController:first animated:YES];
+}
 @end
